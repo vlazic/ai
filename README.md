@@ -43,3 +43,7 @@ cd ai
 - `storage/` and `safetensors-models/` are gitignored (except .gitkeep)
 - All Docker containers use NVIDIA GPU
 - Sample FRP client configuration is provided in `frpc.ini.sample` for remote access. Put it in `/etc/frp/frpc.ini` and run `sudo systemctl restart frpc` to apply changes.
+
+## TODO
+
+- [ ] Add Ollama proxy server for remote access [ParisNeo/ollama_proxy_server](https://github.com/ParisNeo/ollama_proxy_server)
