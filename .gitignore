@@ -1,0 +1,4 @@
+safetensors-models/*
+\!safetensors-models/.gitkeep
+storage/*
+\!storage/.gitkeep
