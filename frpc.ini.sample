@@ -1,0 +1,28 @@
+[common]
+server_addr = your-frp-server.com
+server_port = 7000
+
+[comfyui]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 8188
+remote_port = 8188
+use_encryption = true
+use_compression = true
+
+[ollama-api]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 11434
+remote_port = 11434
+use_encryption = true
+use_compression = true
+
+[open-webui]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 47586
+remote_port = 47586
+use_encryption = true
+use_compression = true
+
