@@ -1,4 +1,7 @@
-safetensors-models/*
-\!safetensors-models/.gitkeep
-storage/*
-\!storage/.gitkeep
+install-scripts/safetensors-models/*
+\!install-scripts/safetensors-models/.gitkeep
+install-scripts/storage/*
+\!install-scripts/storage/.gitkeep
+
+# Helper scripts
+helper-scripts/.env

@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  comfyui:
+    image: yanwk/comfyui-boot:cu121
+    container_name: comfyui
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "127.0.0.1:8188:8188"
+    volumes:
+      - ./storage:/home/runner
+
+  nginx-auth:
+    image: nginx:alpine
+    container_name: comfyui-nginx
+    restart: unless-stopped
+    ports:
+      - "8189:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./htpasswd:/etc/nginx/.htpasswd:ro
+    depends_on:
+      - comfyui

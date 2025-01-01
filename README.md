@@ -1,26 +1,38 @@
-# Local AI Tools Setup
+# AI Tools and Helper Scripts
 
-Collection of scripts for running various AI tools locally. Tested on Ubuntu.
+Collection of installation scripts for running various AI tools locally, along with helper scripts for common AI-related tasks. Tested on Ubuntu.
 
-## Scripts
+## Installation Scripts
 
-### ComfyUI (`comfyui-docker.sh`)
+All installation scripts are located in the `install-scripts/` directory.
+
+### ComfyUI (`install-scripts/comfyui-docker.sh`)
 Stable Diffusion UI running on port 8188
 ```bash
-./comfyui-docker.sh
+./install-scripts/comfyui-docker.sh
 ```
 
-### Ollama (`ollama.sh`)
+### Ollama (`install-scripts/ollama.sh`)
 Local LLMs installation with external access enabled
 ```bash
-./ollama.sh
+./install-scripts/ollama.sh
 ```
 
-### Open WebUI (`openwebui-docker.sh`)
+### Open WebUI (`install-scripts/openwebui-docker.sh`)
 Web interface for Ollama on port 47586
 ```bash
-./openwebui-docker.sh
+./install-scripts/openwebui-docker.sh
 ```
+
+## Helper Scripts
+
+Helper scripts for common AI-related tasks are located in the `helper-scripts/` directory.
+
+### Available Helper Scripts
+
+- `file-to-transcript.sh` - Transcribe audio files using OpenAI or Groq
+- `image-ocr.sh` - Extract text from images using OpenAI GPT-4 Vision
+- `translate-audio.sh` - Record and translate audio using OpenAI/Groq
 
 ## Prerequisites
 
@@ -35,12 +47,12 @@ git clone git@github.com:vlazic/ai.git
 cd ai
 
 # Run what you need
-./ollama.sh          # Install Ollama
-./openwebui-docker.sh  # Setup Ollama web UI
+./install-scripts/ollama.sh            # Install Ollama
+./install-scripts/openwebui-docker.sh  # Setup Ollama web UI
 ```
 
 ## Notes
-- `storage/` and `safetensors-models/` are gitignored (except .gitkeep)
+- `./install-scripts/storage/` and `./install-scripts/safetensors-models/` are gitignored (except .gitkeep)
 - All Docker containers use NVIDIA GPU
 - Sample FRP client configuration is provided in `frpc.ini.sample` for remote access. Put it in `/etc/frp/frpc.ini` and run `sudo systemctl restart frpc` to apply changes.
 
